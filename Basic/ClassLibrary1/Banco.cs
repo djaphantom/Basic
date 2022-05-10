@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    readonly SqlTransaction tt = null;
-    readonly SqlConnection cn = null;
-
+   
     public class Banco
     {
+            readonly SqlTransaction t = null;
+            readonly SqlConnection cn = null;
         public Banco()
 
-        {
 
+        {
             t = cn.BeginTransaction(IsolationLevel.Serializable);
             cn = new SqlConnection("");
         }
@@ -37,7 +37,7 @@ namespace DAL
             t.Commit();
             return true;
         }
-    } 
-        
+    }
+
 }
 
