@@ -1,0 +1,34 @@
+USE MASTER
+GO
+IF EXISTS(SELECT 1 FROM sys.databaseS WHERE name = 'Loja')
+    DROP DATABASE Loja
+GO
+create database Loja
+GO
+
+use Loja
+GO
+
+create table Usuario
+(
+   Id INT PRIMARY KEY IDENTITY(1,1),
+   NomeUsuario VARCHAR(150),
+   Senha VARCHAR(100),
+   Ativo BIT
+)
+Go
+create PROCEDURE SP_InsertUsuario
+   @Id INT output,
+   @NomeUsuario VARCHAR(150),
+   @Senha VARCHAR(100),
+   @Ativo BIT
+AS
+   INSERT INTO Usuario(Ativo, NomeUsuario, Senha)
+   values (@Ativo, @NomeUsuario, @Senha)
+   SET @Id = (SELECT @@IDENTITY)
+   --SELECT @@IDENTITY
+GO
+
+/*CREATE SP_InserirUsuario o, 'teste', '123', 1  
+@Id INT,
+*/
