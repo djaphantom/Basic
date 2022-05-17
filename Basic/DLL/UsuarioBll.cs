@@ -1,22 +1,17 @@
 ﻿using DAL;
 using Model;
 using System.Collections.Generic;
+
 namespace BLL
 {
-    public class UsuarioBll
-
+    public class UsuarioBLL
     {
-        public void Inserir()
+        public void Inserir(Usuario _usuario)
         {
-            Usuario usuario = new Usuario();
-            usuario.NomeUsuario = "Djackson";
-            usuario.Senha = "123";
-            usuario.Ativo = true;
-
             UsuarioDAL usuarioDAL = new UsuarioDAL();
-            usuarioDAL.Inserir(usuario);
+            usuarioDAL.Inserir(_usuario);
         }
-        public void excluir()
+        public void Excluir()
         {
 
         }
@@ -27,8 +22,6 @@ namespace BLL
         public List<Usuario> Buscar()
         {
             return new List<Usuario>();
-
-
         }
     }
 }

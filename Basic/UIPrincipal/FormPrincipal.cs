@@ -1,5 +1,4 @@
-﻿using BLL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,17 +10,19 @@ using System.Windows.Forms;
 
 namespace UIPrincipal
 {
-    public partial class Form1 : Form
+    public partial class FormPrincipal : Form
     {
-        public Form1()
+        public FormPrincipal()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UsuarioBll usuarioBLL = new UsuarioBll();
-            usuarioBLL.Inserir();
+            using (FormConsultaUsuario frm = new FormConsultaUsuario())
+            {
+                frm.ShowDialog();
+            }
 
         }
     }
