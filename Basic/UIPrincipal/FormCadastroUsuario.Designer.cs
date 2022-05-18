@@ -52,7 +52,7 @@ namespace UIPrincipal
             this.idLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.idLabel.Name = "idLabel";
             this.idLabel.Size = new System.Drawing.Size(16, 13);
-            this.idLabel.TabIndex = 4;
+            this.idLabel.TabIndex = 8;
             this.idLabel.Text = "Id";
             // 
             // nomeUsuarioLabel
@@ -62,7 +62,7 @@ namespace UIPrincipal
             this.nomeUsuarioLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nomeUsuarioLabel.Name = "nomeUsuarioLabel";
             this.nomeUsuarioLabel.Size = new System.Drawing.Size(72, 13);
-            this.nomeUsuarioLabel.TabIndex = 6;
+            this.nomeUsuarioLabel.TabIndex = 0;
             this.nomeUsuarioLabel.Text = "Nome usuário";
             // 
             // senhaLabel
@@ -72,7 +72,7 @@ namespace UIPrincipal
             this.senhaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.senhaLabel.Name = "senhaLabel";
             this.senhaLabel.Size = new System.Drawing.Size(38, 13);
-            this.senhaLabel.TabIndex = 8;
+            this.senhaLabel.TabIndex = 2;
             this.senhaLabel.Text = "Senha";
             // 
             // buttonSalvar
@@ -81,7 +81,7 @@ namespace UIPrincipal
             this.buttonSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(56, 26);
-            this.buttonSalvar.TabIndex = 0;
+            this.buttonSalvar.TabIndex = 5;
             this.buttonSalvar.Text = "Sal&var";
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
@@ -92,9 +92,10 @@ namespace UIPrincipal
             this.buttonSalvarECadastrarNovo.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSalvarECadastrarNovo.Name = "buttonSalvarECadastrarNovo";
             this.buttonSalvarECadastrarNovo.Size = new System.Drawing.Size(155, 26);
-            this.buttonSalvarECadastrarNovo.TabIndex = 1;
+            this.buttonSalvarECadastrarNovo.TabIndex = 6;
             this.buttonSalvarECadastrarNovo.Text = "Salvar e cadastrar um &novo";
             this.buttonSalvarECadastrarNovo.UseVisualStyleBackColor = true;
+            this.buttonSalvarECadastrarNovo.Click += new System.EventHandler(this.buttonSalvarECadastrarNovo_Click);
             // 
             // buttonSair
             // 
@@ -102,7 +103,7 @@ namespace UIPrincipal
             this.buttonSair.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(56, 26);
-            this.buttonSair.TabIndex = 2;
+            this.buttonSair.TabIndex = 7;
             this.buttonSair.Text = "&Sair";
             this.buttonSair.UseVisualStyleBackColor = true;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
@@ -118,7 +119,7 @@ namespace UIPrincipal
             this.idTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(76, 20);
-            this.idTextBox.TabIndex = 5;
+            this.idTextBox.TabIndex = 9;
             // 
             // nomeUsuarioTextBox
             // 
@@ -127,7 +128,7 @@ namespace UIPrincipal
             this.nomeUsuarioTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.nomeUsuarioTextBox.Name = "nomeUsuarioTextBox";
             this.nomeUsuarioTextBox.Size = new System.Drawing.Size(313, 20);
-            this.nomeUsuarioTextBox.TabIndex = 7;
+            this.nomeUsuarioTextBox.TabIndex = 1;
             // 
             // senhaTextBox
             // 
@@ -137,7 +138,7 @@ namespace UIPrincipal
             this.senhaTextBox.Name = "senhaTextBox";
             this.senhaTextBox.PasswordChar = '*';
             this.senhaTextBox.Size = new System.Drawing.Size(122, 20);
-            this.senhaTextBox.TabIndex = 9;
+            this.senhaTextBox.TabIndex = 3;
             // 
             // ativoCheckBox
             // 
@@ -147,7 +148,7 @@ namespace UIPrincipal
             this.ativoCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.ativoCheckBox.Name = "ativoCheckBox";
             this.ativoCheckBox.Size = new System.Drawing.Size(50, 17);
-            this.ativoCheckBox.TabIndex = 11;
+            this.ativoCheckBox.TabIndex = 4;
             this.ativoCheckBox.Text = "Ativo";
             this.ativoCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -184,6 +185,7 @@ namespace UIPrincipal
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormCadastroUsuario";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de usuários";
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
