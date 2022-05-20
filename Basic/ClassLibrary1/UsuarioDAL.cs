@@ -70,8 +70,12 @@ namespace DAL
                 da.SelectCommand.Connection = cn;
                 da.SelectCommand.CommandText = "SP_BuscarUsuario";
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
                 SqlParameter pfiltro = new SqlParameter("@filtro", SqlDbType.VarChar);
                 pfiltro.Value = _filtro;
+                da.SelectCommand.Parameters.Add(pfiltro);
+
+                cn.Open();
                 da.Fill(dt);
                 return dt;
 
@@ -97,13 +101,14 @@ namespace DAL
             SqlConnection cn = new SqlConnection();
             try
             {
-                cn.ConnectionString = "";
+                cn.ConnectionString = @"User ID=SA;Initial Catalog=Loja;Data Source=.\SQLEXPRESS2019A;Password=Senailab05";
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "SP_ExcluirioUsuario";
-                SqlParameter pid = new SqlParameter();
+                cmd.CommandText = "SP_ExcluirUsuario";
+                SqlParameter pid = new SqlParameter("@Id", SqlDbType.Int);
                 pid.Value = _id;
+                cmd.Parameters.Add(pid);
 
                 cn.Open();
                 int resultado = cmd.ExecuteNonQuery();
@@ -132,12 +137,31 @@ namespace DAL
             SqlConnection cn = new SqlConnection();
             try
             {
-                cn.ConnectionString = "";
+                cn.ConnectionString = @"User ID=SA;Initial Catalog=Loja;Data Source=.\SQLEXPRESS2019A;Password=Senailab05";
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
+
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "SP_AlterarUsuario";
 
+                SqlParameter pid = new SqlParameter("@Id", SqlDbType.Int);
+                pid.Value = _usuario.Id;
+                cmd.Parameters.Add(pid);
+
+                SqlParameter pnomeUsuario = new SqlParameter("@NomeUsuario", SqlDbType.VarChar);
+                pid.Value = _usuario.NomeUsuario;
+                cmd.Parameters.Add(pnomeUsuario);
+
+                SqlParameter psenha = new SqlParameter("@Senha", SqlDbType.VarChar);
+                pid.Value = _usuario.Senha;
+                cmd.Parameters.Add(psenha);
+
+                SqlParameter pativo = new SqlParameter("@Ativo", SqlDbType.Bit);
+                pid.Value = _usuario.Ativo;
+                cmd.Parameters.Add(pativo);
+
+                cn.Open();
+                cmd.ExecuteNonQuery();
                 return _usuario;
             }
             catch (SqlException ex)

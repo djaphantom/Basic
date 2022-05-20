@@ -1,6 +1,7 @@
 ﻿using DAL;
 using Model;
-using System.Collections.Generic;
+using System;
+using System.Data;
 
 namespace BLL
 {
@@ -11,17 +12,25 @@ namespace BLL
             UsuarioDAL usuarioDAL = new UsuarioDAL();
             usuarioDAL.Inserir(_usuario);
         }
-        public void Excluir()
+        public DataTable Buscar(string _filtro)
         {
-
+            UsuarioDAL usuarioDAL = new UsuarioDAL();
+            return usuarioDAL.Buscar(_filtro);
         }
-        public void Alterar()
+        public Usuario Alterar(Usuario _usuario)
         {
-
+            UsuarioDAL usuarioDAL = new UsuarioDAL();
+            return usuarioDAL.Alterar(_usuario);
         }
-        public List<Usuario> Buscar()
+        public void Excluir(int _id)
         {
-            return new List<Usuario>();
+            UsuarioDAL usuarioDal = new UsuarioDAL();
+            usuarioDal.Excluir(_id);
+        }
+
+        public void Buscar()
+        {
+            throw new NotImplementedException();
         }
     }
 }
